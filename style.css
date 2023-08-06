@@ -1,0 +1,461 @@
+body {
+    background-color: var(--dark-gray);
+}
+
+:root {
+    --dark-gray: #313131;
+    --white: #f5e6c8;
+    --gray: #202020;
+    --hover: rgba(31, 31, 31, 0.527);
+    --background1: var(--font);
+    --background2: #2b2b2b;
+    --iconColor: #616161;
+    --font: #5e5e5e;
+    --purple: #c134dd;
+    --blue: #2b8ecf;
+    --orange:#fd8945;
+    --themeColor: #00d062;
+    --yellow:#ffd843;
+    --red:  #ff4c4c;
+    --green: #00d062;
+}
+
+.fa-solid {
+    scale: 2;
+    color: var(--iconColor);
+}
+
+.fa-play:hover, .fa-gear:hover, .fa-rotate-left:hover {
+    color: var(--white);
+}
+
+#main-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+
+#list-container {
+    background-color: var(--background2);
+    height: 400px;
+    width: 500px;
+    border-radius: 25px;
+}
+
+#wave {
+    scale: 2.5;
+    color: var(--themeColor);
+}
+
+#title {
+    font-size: 30px;
+    margin-left: 25px;
+    color: var(--white);
+}
+
+#heading {
+    position: absolute;
+    color: white;
+    font-family: 'Space Grotesk', sans-serif;
+    top: 30px;
+    left: 50px;
+    display: flex;
+    align-items: center;
+}
+
+
+#playButton {
+    visibility: visible;
+    position: inherit;
+    border-style: none;
+    background-color: transparent;
+    border-radius: 15px;
+    height: 50px;
+    width: 50px;
+}
+
+
+.play_img {
+    height: 50px;
+}
+
+.reload_img {
+    height: 55px
+}
+
+.container1 {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    margin-top: 400px;
+}
+
+.controls {
+    display: flex;
+    height: 100px;
+    width: 100px;
+    border-radius: 25px;
+    border-style: none;
+    vertical-align: top;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+#settings {
+    display: flex;
+    height: 100px;
+    width: 100px;
+    border-radius: 25px;
+    border-style: none;
+    vertical-align: top;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    
+}
+
+#settings-icon:hover {
+    color: var(--white);
+}
+
+#settingsButton {
+    visibility: visible;
+    position: inherit;
+    border-style: none;
+    background-color: transparent;
+    border-radius: 15px;
+    height: 50px;
+    width: 50px;
+}
+
+#settingsButton:hover {
+    color: var(--white);
+}
+
+
+#settings_img {
+    height: 60px;
+}
+
+#timer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    top: 16em;
+    height: 120px;
+    width: 300px;
+    border-radius: 25px;
+    border-style: none;
+    position: absolute;
+    color: var(--white);
+}
+
+#timer-container {
+    display: flex;
+    top: 250px;
+    justify-content: center;
+}
+
+#minutes {
+    color: var(--white);
+    font-size: 100px;
+    font-family: 'Varela Round', sans-serif;
+    width: 140px;
+    height: 90px;
+    text-align: center;
+}
+
+#seconds {
+    color: var(--white);
+    font-size: 100px;
+    font-family: 'Varela Round', sans-serif;
+    width: 140px;
+    height: 90px;
+    text-align: center;
+}
+
+#doppelpunkt {
+    color: var(--white);
+    font-size: 100px;
+    font-family: 'Varela Round', sans-serif;
+    width: 40px;
+    height: 90px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.header {
+    display: flex;
+    position: absolute;
+    top: 100px;
+    height: 75px;
+    width: 600px;
+    border-radius: 25px;
+    border-style: none;
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#header-container {
+    display: flex;
+    justify-content: center;
+}
+#work {
+    font-size: 20px;
+    font-family: 'Varela Round', sans-serif;
+    border-style: none;
+    background-color: transparent;
+    color: var(--font);
+    border-radius: 15px;
+    width: 140px;
+    height: 50px;
+}
+
+#work:hover {
+    color: var(--white) !important;
+}
+
+
+
+#short_break {
+    font-size: 20px;
+    font-family: 'Varela Round', sans-serif;
+    border-style: none;
+    background-color: transparent;
+    color: var(--font);
+    border-radius: 15px;
+    height: 50px;
+    width: 140px;
+}
+
+
+#short_break:hover {
+    color: var(--white) !important;
+}
+
+#long_break {
+    font-size: 20px;
+    font-family: 'Varela Round', sans-serif;
+    border-style: none;
+    background-color: transparent;
+    color: var(--font);
+    border-radius: 15px;
+    height: 50px;
+    width: 140px;
+}
+#long_break:hover {
+    color: var(--white) !important;
+}
+
+
+#work, #long_break, #short_break {
+    box-shadow: 7.5px 7.5px 10px #202020;
+    background-color: #353535 !important;
+}
+
+#themes {
+    position: absolute;
+    border-radius: 15px;
+    border-style: none;
+    background-color: var(--background2);
+    margin: 0 auto;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    right: 22.5px;
+    bottom: 85px;
+    align-items: center;
+    box-shadow: 5px 5px #202020;
+}
+
+
+
+.themeIcon {
+    height: 50px;
+    width: auto;
+    cursor: pointer;
+}
+
+.fa-palette {
+    position: absolute;
+    cursor: pointer;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+.fa-gear:hover {
+    color: var(--white) !important;
+}
+
+.fa-palette:hover {
+    color: var(--white) !important;
+}
+
+#dropDownButton {
+    font-size: 20px;
+    font-family: 'Varela Round', sans-serif;
+    border-style: none;
+    background-color: transparent;
+    color: var(--font);
+    border-radius: 15px;
+    width: 130px;
+    height: 50px;
+    position: inherit;
+    top: calc(50% - 25px);
+    left: calc(50% - 65px);
+}
+
+.fa-droplet {
+    margin: 20px;
+    cursor: pointer;
+}
+
+.fa-droplet:hover {
+    scale: 2.4 !important;
+}
+
+
+#settingsDropdown {
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    top: 550px;
+    border-radius: 25px;
+    border-style: none;
+    background-color: var(--background2);
+    box-shadow: 7.5px 7.5px #202020;
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#input-div-work, #input-div-shortBreak, #input-div-longBreak {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 50px;
+    padding-bottom: 10px;
+}
+
+#workSettings,#shortBreakSettings, #longBreakSettings {
+    font-size: 20px;
+    font-family: 'Varela Round', sans-serif;
+    border-style: none;
+    background-color: transparent;
+    color: var(--font);
+    border-radius: 15px;
+    height: 50px;
+    width: 140px;
+    cursor: default;
+}
+
+
+
+option {
+    border-style: none;
+    font-size: 30px;
+    font-family: 'Varela Round', sans-serif;
+}
+
+
+#workInput, #shortBreakInput, #longBreakInput {
+    background-color:#2d2d2d;
+    border-style: none;
+    border-radius: 17px;
+    color: var(--font);
+    height: 50px;
+    width: 80px;
+    font-size: 30px;
+    font-family: 'Varela Round', sans-serif;
+    cursor: pointer;
+    margin-top: 5px !important;
+}
+
+#workInput:focus, #shortBreakInput:focus, #longBreakInput:focus {
+    color: var(--white);
+}
+
+
+
+#palette-icon {
+    bottom: 30px;
+    right: 30px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--hover);
+}
+
+::selection {
+    background: transparent;
+}
+
+
+#modeDiv {
+    height: 50px;
+    background-color: var(--background2);
+    width: 50px;
+    border-radius: 15px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#github {
+    font-family: 'Jetbrains Mono';
+    font-weight: bolder;
+    height: 20px;
+    position: absolute;
+    margin-left: 20px;
+    bottom: 27.5px;
+    color: var(--font);
+    cursor: pointer;
+    font-size: 17.5px;
+    text-decoration: none;
+}
+
+#github:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+
+select:hover {
+    color: var(--white);
+}
+
+
+
+@media (max-width: 620px) {
+    .header {
+        flex-direction: column;
+        width: 200px;
+        justify-content: space-evenly;
+        height: 225px;
+    }
+    #timer, .controls, #settingsButton {
+        transform: translateY(75px);
+    }
+    #settingsDropdown {
+        width: 270px;
+        height: 200px;
+        transform: translateY(50px);
+    }
+    #input-div-shortBreak, #input-div-longBreak {
+        margin-top: -25px;
+    } 
+    #workInput, #shortBreakInput, #longBreakInput {
+        font-size: 25px;
+    }
+}
+

@@ -1,11 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tudu</title>
+    <title id="title">Tudu</title>
+    <link rel="icon" type="image/png" href="img/Uhr.png"/>
+    <link rel="shortcut icon" type="image/png" href="img/Uhr.png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7228fdaa38.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+    <div id="heading">
+        <i id="wave" class="fa-solid fa-water"></i>
+        <label id="title">Tudu</>
+    </div>
+
+    <div id="header-container">
+        <header class="header">
+            <button id="work" onclick="setWork(), state = 1;">Work</button>
+            
+        </header>
+    </div>
+
+
+
+    <div id="main-container">
+        <div id="list-container">
+            <ul>
+
+            </ul>
+        </div>
+    </div>
+
+
+    <i id="palette-icon" class="fa-solid fa-palette" onclick="showThemes()"></i>
     
+    <div id="themes">
+        <i class="fa-solid fa-droplet" style="color: var(--purple)"  onclick="document.querySelector(':root').style.setProperty('--themeColor', 'var(--purple)'), updateThemeColor()"></i>
+        <i class="fa-solid fa-droplet" style="color: var(--blue)  "  onclick="document.querySelector(':root').style.setProperty('--themeColor', 'var(--blue)'  ), updateThemeColor()"></i>
+        <i class="fa-solid fa-droplet" style="color: var(--green) "  onclick="document.querySelector(':root').style.setProperty('--themeColor', 'var(--green) '), updateThemeColor()"></i>
+        <i class="fa-solid fa-droplet" style="color: var(--yellow)"  onclick="document.querySelector(':root').style.setProperty('--themeColor', 'var(--yellow)'), updateThemeColor()"></i>
+        <i class="fa-solid fa-droplet" style="color: var(--orange)"  onclick="document.querySelector(':root').style.setProperty('--themeColor', 'var(--orange)'), updateThemeColor()"></i>
+        <i class="fa-solid fa-droplet" style="color: var(--red)   "  onclick="document.querySelector(':root').style.setProperty('--themeColor', 'var(--red)'   ), updateThemeColor()"></i>
+    </div>
+
+    <footer> 
+        <a href="https://github.com/Balazsmi/Tudu" id="github">&lt/&gtGitHub</a>
+    </footer>
+
+    
+    <script src="main.js"></script>
 </body>
 </html>
+
+
