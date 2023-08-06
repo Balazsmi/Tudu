@@ -1,3 +1,3 @@
 # Tudu
 
-A simple todo list website.
+A simple todo list website
