@@ -37,9 +37,36 @@ body {
 
 #list-container {
     background-color: var(--background2);
-    height: 400px;
+    height:auto;
+    min-height: 400px;
     width: 500px;
     border-radius: 25px;
+    padding-top: 15px;
+}
+
+
+li {
+    color: var(--white);
+    font-size: 25px;
+    font-family: 'Varela Round', sans-serif;
+    margin: 20px;
+    padding-left: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+#addItemInput {
+    font-size: 25px;
+    border: none;
+    border-radius: 7.5px;
+    background-color: transparent;
+    color: var(--white);
+    width: 375px;
+    padding: 0px !important;
+    font-family: 'Varela Round', sans-serif;
+}
+
+input:focus {
+    outline:none !important;
 }
 
 #wave {
@@ -82,7 +109,7 @@ body {
     justify-content: center;
 }
 #work {
-    font-size: 20px;
+    font-size: 35px;
     font-family: 'Varela Round', sans-serif;
     border-style: none;
     background-color: transparent;

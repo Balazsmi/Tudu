@@ -12,8 +12,8 @@
     <link rel="icon" type="image/png" href="img/Uhr.png"/>
     <link rel="shortcut icon" type="image/png" href="img/Uhr.png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/7228fdaa38.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -25,8 +25,7 @@
 
     <div id="header-container">
         <header class="header">
-            <button id="work" onclick="setWork(), state = 1;">Work</button>
-            
+            <button id="work" onclick="">+</button>
         </header>
     </div>
 
@@ -34,8 +33,11 @@
 
     <div id="main-container">
         <div id="list-container">
-            <ul>
+            <ul id="todo-list">
 
+            </ul>
+            <ul>
+                <li><input id="addItemInput" type="text" placeholder="add item..." onchange="addItem(), clearInput();"></li>
             </ul>
         </div>
     </div>

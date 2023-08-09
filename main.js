@@ -28,3 +28,13 @@ function updateThemeColor() {
 
 }
 
+function addItem() {
+	var ul = document.getElementById("todo-list");
+	var li = document.createElement("li");
+	li.appendChild(document.createTextNode(document.getElementById("addItemInput").value));
+	ul.appendChild(li);
+}
+
+function clearInput() {
+	document.getElementById("addItemInput").value = "";
+}
