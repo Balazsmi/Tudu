@@ -63,11 +63,13 @@ li {
     width: 375px;
     padding: 0px !important;
     font-family: 'Varela Round', sans-serif;
+    margin-bottom: 15px;
 }
 
 input:focus {
     outline:none !important;
 }
+
 
 #wave {
     scale: 2.5;
