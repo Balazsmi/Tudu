@@ -1,29 +1,13 @@
 let theme = 1;
-
 let array = [];
 
-let arrayLength = JSON.parse(localStorage.getItem("array")).length;
-alert(arrayLength);
-
-if (localStorage.getItem("array") != null) {
-	let i = 0;
-	while(i < arrayLength) {
-		array.push(JSON.parse(localStorage.getItem("array")[i]));
-		i++;
-	}
-}
-
-
-
-localStorage.setItem("array", JSON.stringify(array));
-
-alert(localStorage.getItem("array"));
-
+retreiveListFromStorage();
 
 document.querySelector(':root').style.setProperty('--themeColor', localStorage.getItem("themeColorLocalStorage"));
 updateThemeColor();
 
 function showThemes() {
+	//toggles the theme-color-picker
 	var x = document.getElementById("themes");
 	if (x.style.visibility == "visible") {
 		document.getElementById("palette-icon").style.color = 'var(--iconColor)';
@@ -41,21 +25,45 @@ function updateThemeColor() {
 	document.getElementById("wave").style.color = 'var(--themeColor)';
 }
 
-function addItem() {
-	//add Item to the list
+function addItem(value) {
+	//adds one Item from the input field into the list
 	var ul = document.getElementById("todo-list");
 	var li = document.createElement("li");
-	li.appendChild(document.createTextNode(document.getElementById("addItemInput").value));
+	li.appendChild(document.createTextNode(value));
 	ul.appendChild(li);
 }
 
 function addItemToStorage() {
-	//add Item to localStorage
+	//adds Item to localStorage
 	array.push(document.getElementById("addItemInput").value);
 	localStorage.setItem("array", JSON.stringify(array));
-	alert(array);
 }
 
+function retreiveListFromStorage() {
+	//adds back the stored items to the array in the localStorage
+	if (localStorage.getItem("array") != null) {
+		let i = 0;
+		while(i < JSON.parse(localStorage.getItem("array")).length) {
+			array.push(JSON.parse(localStorage.getItem("array"))[i]);
+			addItem(JSON.parse(localStorage.getItem("array"))[i]);
+			i++;
+		}
+	}
+	localStorage.setItem("array", JSON.stringify(array));
+}
+
+
 function clearInput() {
+	//clears inputfield
 	document.getElementById("addItemInput").value = "";
+}
+
+
+function call() {
+	addItem(document.getElementById("addItemInput").value);
+}
+
+function emptyStorage() {
+	localStorage.setItem("array", []);
+	
 }

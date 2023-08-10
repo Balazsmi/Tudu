@@ -110,7 +110,7 @@ input:focus {
     display: flex;
     justify-content: center;
 }
-#work {
+#clear {
     font-size: 35px;
     font-family: 'Varela Round', sans-serif;
     border-style: none;
@@ -121,13 +121,13 @@ input:focus {
     height: 50px;
 }
 
-#work:hover {
+#clear:hover {
     color: var(--white) !important;
 }
 
 
 
-#work {
+#clear {
     box-shadow: 7.5px 7.5px 10px #202020;
     background-color: #353535 !important;
 }

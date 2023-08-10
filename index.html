@@ -25,7 +25,7 @@
 
     <div id="header-container">
         <header class="header">
-            <button id="work">+</button>
+            <button id="clear" onclick="emptyStorage();">clear</button>
         </header>
     </div>
 
@@ -37,7 +37,7 @@
 
             </ul>
             <ul>
-                <li><input id="addItemInput" type="text" placeholder="add item..." onchange="addItem(), addItemToStorage(), clearInput();"></li>
+                <li><input id="addItemInput" type="text" placeholder="add item..." onchange="call(), addItemToStorage(), clearInput();"></li>
             </ul>
         </div>
     </div>
