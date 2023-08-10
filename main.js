@@ -29,6 +29,8 @@ function addItem(value) {
 	//adds one Item from the input field into the list
 	var ul = document.getElementById("todo-list");
 	var li = document.createElement("li");
+
+    li.innerHTML = '<button id="deleteButton" onclick="deleteItem();">X</button>';
 	li.appendChild(document.createTextNode(value));
 	ul.appendChild(li);
 }
@@ -65,5 +67,9 @@ function call() {
 
 function emptyStorage() {
 	localStorage.setItem("array", []);
-	
+
+}
+
+function deleteItem() {
+	console.log("deleted");
 }
