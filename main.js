@@ -1,15 +1,26 @@
 let theme = 1;
 
-let array = ["banana", "tomato", "apple"];
-let array2 = ["test"];
-localStorage.setItem("array", array);
-localStorage.setItem("array2", array2);
+let array = [];
+
+let arrayLength = JSON.parse(localStorage.getItem("array")).length;
+alert(arrayLength);
+
+if (localStorage.getItem("array") != null) {
+	let i = 0;
+	while(i < arrayLength) {
+		array.push(JSON.parse(localStorage.getItem("array")[i]));
+		i++;
+	}
+}
+
+
+
+localStorage.setItem("array", JSON.stringify(array));
+
+alert(localStorage.getItem("array"));
 
 
 document.querySelector(':root').style.setProperty('--themeColor', localStorage.getItem("themeColorLocalStorage"));
-
-displayItems();
-
 updateThemeColor();
 
 function showThemes() {
@@ -31,24 +42,20 @@ function updateThemeColor() {
 }
 
 function addItem() {
+	//add Item to the list
 	var ul = document.getElementById("todo-list");
 	var li = document.createElement("li");
-
 	li.appendChild(document.createTextNode(document.getElementById("addItemInput").value));
 	ul.appendChild(li);
+}
+
+function addItemToStorage() {
+	//add Item to localStorage
 	array.push(document.getElementById("addItemInput").value);
-	localStorage.setItem("array", array);
+	localStorage.setItem("array", JSON.stringify(array));
 	alert(array);
 }
 
 function clearInput() {
 	document.getElementById("addItemInput").value = "";
-}
-
-function displayItems() {
-	alert(localStorage.getItem("array").length);
-	for (let index = 0; index < localStorage.getItem("array").length; index++) {
-		array2[index] = localStorage.getItem("array")[index];
-		localStorage.setItem("array2", array2);
-	}
 }
