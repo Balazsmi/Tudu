@@ -13,10 +13,10 @@ body {
     --font: #5e5e5e;
     --purple: #c134dd;
     --blue: #2b8ecf;
-    --orange:#fd8945;
+    --orange: #fd8945;
     --themeColor: #00d062;
-    --yellow:#ffd843;
-    --red:  #ff4c4c;
+    --yellow: #ffd843;
+    --red: #ff4c4c;
     --green: #00d062;
 }
 
@@ -25,7 +25,9 @@ body {
     color: var(--iconColor);
 }
 
-.fa-play:hover, .fa-gear:hover, .fa-rotate-left:hover {
+.fa-play:hover,
+.fa-gear:hover,
+.fa-rotate-left:hover {
     color: var(--white);
 }
 
@@ -37,18 +39,22 @@ body {
 
 #list-container {
     background-color: var(--background2);
-    height:auto;
+    height: auto;
     min-height: 400px;
     width: 500px;
     border-radius: 25px;
     padding-top: 15px;
 }
 
+ul {
+    list-style-type: none;
+    margin-left: -20px;
+}
 
 li {
     color: var(--white);
     font-size: 25px;
-    font-family: 'Varela Round', sans-serif;
+    font-family: "Varela Round", sans-serif;
     margin: 20px;
     padding-left: 0px !important;
     margin-bottom: 0px !important;
@@ -62,14 +68,14 @@ li {
     color: var(--white);
     width: 375px;
     padding: 0px !important;
-    font-family: 'Varela Round', sans-serif;
+    font-family: "Varela Round", sans-serif;
     margin-bottom: 15px;
+    margin-left: 40px;
 }
 
 input:focus {
-    outline:none !important;
+    outline: none !important;
 }
-
 
 #wave {
     scale: 2.5;
@@ -85,7 +91,7 @@ input:focus {
 #heading {
     position: absolute;
     color: white;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     top: 30px;
     left: 50px;
     display: flex;
@@ -112,7 +118,7 @@ input:focus {
 }
 #clear {
     font-size: 35px;
-    font-family: 'Varela Round', sans-serif;
+    font-family: "Varela Round", sans-serif;
     border-style: none;
     background-color: transparent;
     color: var(--font);
@@ -124,8 +130,6 @@ input:focus {
 #clear:hover {
     color: var(--white) !important;
 }
-
-
 
 #clear {
     box-shadow: 7.5px 7.5px 10px #202020;
@@ -146,8 +150,6 @@ input:focus {
     align-items: center;
     box-shadow: 5px 5px #202020;
 }
-
-
 
 .themeIcon {
     height: 50px;
@@ -189,10 +191,8 @@ button:hover {
     background: transparent;
 }
 
-
-
 #github {
-    font-family: 'Jetbrains Mono';
+    font-family: "Jetbrains Mono";
     font-weight: bolder;
     height: 20px;
     position: absolute;
@@ -209,10 +209,20 @@ button:hover {
     text-decoration: underline;
 }
 
-
 select:hover {
     color: var(--white);
 }
 
+#deleteButton {
+    background-color: transparent;
+    border-radius: 15px;
+    height: 30px;
+    width: 30px;
+    border-style: none;
+    margin-right: 10px;
+}
 
-
+.deleteIcon {
+    scale: 1.5;
+    color: var(--white);
+}
