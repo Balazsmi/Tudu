@@ -1,7 +1,20 @@
 let theme = 1;
-let array = [];
+let arrays = {
+	1: [],
+	2: [],
+	3: [],
+	4: [],
+	5: [],
+};
 
-retreiveListFromStorage();
+
+let cycle = 1;
+document.getElementById("addItemInput" + cycle).focus();
+
+for (let i = 1; i <= 5; i++) {
+	retreiveListFromStorage(arrays[i]);
+}
+
 
 document.querySelector(':root').style.setProperty('--themeColor', localStorage.getItem("themeColorLocalStorage"));
 updateThemeColor();
@@ -15,7 +28,6 @@ function showThemes() {
 	} else {
 		document.getElementById("palette-icon").style.color = 'var(--themeColor)';
 	  	x.style.visibility = "visible";
-		
 	}
 }
 
@@ -26,62 +38,77 @@ function updateThemeColor() {
 	document.getElementById("wave").style.color = 'var(--themeColor)';
 }
 
-function addItem(value) {
+function addItemToPage() {
 	//adds one Item from the input field into the list
-	var ul = document.getElementById("todo-list");
+	var ul = document.getElementById("todo-list" + cycle);
 	var li = document.createElement("li");
     li.innerHTML = '<button id="deleteButton" onclick="deleteItem(this);"><i class="fa-regular fa-circle-xmark deleteIcon"></i></button>';
-	li.appendChild(document.createTextNode(value));
+	li.appendChild(document.createTextNode(document.getElementById("addItemInput" + cycle).value));
 	ul.appendChild(li);
 }
 
 function addItemToStorage() {
 	//adds Item to localStorage
-	array.push(document.getElementById("addItemInput").value);
-	localStorage.setItem("array", JSON.stringify(array));
+	console.log(document.getElementById("addItemInput" + cycle).value);
+	(arrays[cycle]).push(document.getElementById("addItemInput" + cycle).value);
+	console.log(localStorage.getItem(arrays[cycle]));
+	localStorage.setItem("array" + cycle, JSON.stringify((arrays[cycle])));
 }
 
-function retreiveListFromStorage() {
+function retreiveListFromStorage(value) {
 	//adds back the stored items to the array in the localStorage
-	if (localStorage.getItem("array")[0] != null) {
+	if (localStorage.getItem(arrays[cycle]) != null) {
 		let i = 0;
-		while(i < JSON.parse(localStorage.getItem("array")).length) {
-			array.push(JSON.parse(localStorage.getItem("array"))[i]);
-			addItem(JSON.parse(localStorage.getItem("array"))[i]);
+		while(i < JSON.parse(localStorage.getItem(arrays[cycle])).length) {
+			value.push(JSON.parse(localStorage.getItem(arrays[cycle]))[i]);
+			addItemToPage(JSON.parse(localStorage.getItem(arrays[cycle]))[i]);
 			i++;
 		}
 	}
-	localStorage.setItem("array", JSON.stringify(array));
+	localStorage.setItem("array" + cycle, JSON.stringify(value));
 }
 
 
 function clearInput() {
 	//clears inputfield
-	document.getElementById("addItemInput").value = "";
+	document.getElementById("addItemInput" + cycle).value = "";
 }
 
 
 function call() {
-	//executes addItem() with value of input field as parameter
-	addItem(document.getElementById("addItemInput").value);
+	//executes addItemToPage() with value of input field as parameter
+	addItemToPage(document.getElementById("addItemInput" + cycle).value);
+}
+
+function deleteItem() {
+
 }
 
 
-function deleteItem(button) {
-	//gets the index using getIndex() and deletes the list element
-	let index = getIndex(button);
-	if (index >= 0 && index < array.length) {
-		document.getElementById("todo-list").removeChild(document.getElementById("todo-list").children[index]);
-		array.splice(index, 1);
-		localStorage.setItem("array", JSON.stringify(array));
+
+function cycleLeft() {
+	if(cycle > 1) {
+		cycle--;
+		document.getElementById("listHeader").innerHTML = "List " + cycle;
+		cycleUpdate();
 	}
-
+	document.getElementById("addItemInput" + cycle).focus();
 }
 
-function getIndex(button) {
-	//returns index of the li in which the delete-button was clicked
-	let listItem = button.parentNode;
-	let ulItem = listItem.parentNode;
-	let index = Array.from(ulItem.children).indexOf(listItem);
-	return index;
+function cycleRight() {
+	if(cycle < 5) {
+		cycle++;
+		document.getElementById("listHeader").innerHTML = "List " + cycle;
+		cycleUpdate();
+	}
+	document.getElementById("addItemInput" + cycle).focus();
+}
+
+function cycleUpdate() {
+	document.getElementById("list-container1").style = "display: none";
+	document.getElementById("list-container2").style = "display: none";
+	document.getElementById("list-container3").style = "display: none";
+	document.getElementById("list-container4").style = "display: none";
+	document.getElementById("list-container5").style = "display: none";
+	document.getElementById("list-container" + cycle).style = "display: block";
 }
