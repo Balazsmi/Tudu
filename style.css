@@ -227,7 +227,7 @@ button:hover {
 }
 
 #github {
-    font-family: "Jetbrains Mono";
+    font-family: "Varela Round", sans-serif;
     font-weight: bolder;
     height: 20px;
     position: absolute;

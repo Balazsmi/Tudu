@@ -10,11 +10,13 @@ let arrayContainer = {
 let cycle = 1;
 let selectedArray = "array" + cycle;
 
+
+let localStorageItem = JSON.parse(localStorage.getItem("array"));
+
+
 function selectedArrayUpdate() {
 	selectedArray = "array" + cycle;
 }
-
-console.log(JSON.parse(localStorage.getItem("array")));
 
 retreiveListFromStorage();
 focus();
@@ -57,29 +59,37 @@ function addItemToList(value) {
 
 function addItemToStorage() {
 	//adds Item to localStorage
-	console.log(selectedArray);
 	arrayContainer[selectedArray].push(document.getElementById("addItemInput").value);
 	localStorage.setItem("array", JSON.stringify(arrayContainer));
 }
 
 function retreiveListFromStorage() {
 	//adds back the stored items to the array in the localStorage
-	if (localStorage.getItem("array")[0] != null) {
-		let i = 0;
-		while(i < JSON.parse(localStorage.getItem("array")).length) {
-			arrayContainer[selectedArray].push(JSON.parse(localStorage.getItem("array"))[i]);
-			addItemToList(JSON.parse(localStorage.getItem("array"))[i]);
-			i++;
-		}
+	if (localStorage.getItem("array")) {
+		arrayContainer = JSON.parse(localStorage.getItem('array'));
+		selectedArrayUpdate();
+		updateList(selectedArray);
 	}
-	localStorage.setItem("array", JSON.stringify(arrayContainer));
+}
+
+
+function updateList(value) {
+	console.log(selectedArray);
+	for(let i = 0; i < arrayContainer[value].length; i++) {
+		addItemToList(arrayContainer[value][i]);	
+	}
+}
+
+function deleteAllItemsFromList() {
+    while (document.getElementById("todo-list").firstChild) {
+        document.getElementById("todo-list").removeChild(document.getElementById("todo-list").firstChild);
+    }
 }
 
 
 function clearInput() {
 	//clears inputfield
 	document.getElementById("addItemInput").value = "";
-	
 }
 
 
@@ -113,7 +123,8 @@ function getIndex(button) {
 function cycleLeft() {
 	if(cycle > 1) {
 		cycle--;
-		selectedArrayUpdate();
+		deleteAllItemsFromList();
+		retreiveListFromStorage();
 		console.log(selectedArray);
 		document.getElementById("listHeader").innerHTML = "List " + cycle;
 		cycleUpdate();
@@ -124,7 +135,8 @@ function cycleLeft() {
 function cycleRight() {
 	if(cycle < 5) {
 		cycle++;
-		selectedArrayUpdate();
+		deleteAllItemsFromList();
+		retreiveListFromStorage();
 		console.log(selectedArray);
 		document.getElementById("listHeader").innerHTML = "List " + cycle;
 		cycleUpdate();
