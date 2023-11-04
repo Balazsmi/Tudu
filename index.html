@@ -24,58 +24,24 @@
     </div>
 
     <div id="header-container">
-        <header id="header">
-            <button id="cycleLeft" onclick="cycleLeft()"><i class="fa-solid fa-circle-chevron-right fa-rotate-180"></i></button>
-            <header id="listHeader" onclick="rename()">List 1</header>
-            <button id="cycleRight" onclick="cycleRight()"><i class="fa-solid fa-circle-chevron-right"></i></button>
+        <header class="header">
+            <header id="header">
+                <button id="cycleLeft" onclick="cycleLeft()"><i class="fa-solid fa-circle-chevron-right fa-rotate-180"></i></button>
+                <header id="listHeader" onclick="">List 1</header>
+                <button id="cycleRight" onclick="cycleRight()"><i class="fa-solid fa-circle-chevron-right"></i></button>
+            </header>
         </header>
     </div>
 
 
 
     <div id="main-container">
-        <div id="list-container1">
-            <ul id="todo-list1">
+        <div id="list-container">
+            <ul id="todo-list">
                 
             </ul>
             <ul>
-                <li><input id="addItemInput1" type="text" placeholder="add item..." onchange="addItemToPage(), addItemToStorage(), clearInput()"></li>
-            </ul>
-        </div>
-
-        <div id="list-container2">
-            <ul id="todo-list2">
-                
-            </ul>
-            <ul>
-                <li><input id="addItemInput2" type="text" placeholder="add item..." onchange="addItemToPage(), addItemToStorage(), clearInput()"></li>
-            </ul>
-        </div>
-
-        <div id="list-container3">
-            <ul id="todo-list3">
-                
-            </ul>
-            <ul>
-                <li><input id="addItemInput3" type="text" placeholder="add item..." onchange="addItemToPage(), addItemToStorage(), clearInput()"></li>
-            </ul>
-        </div>
-
-        <div id="list-container4">
-            <ul id="todo-list4">
-                
-            </ul>
-            <ul>
-                <li><input id="addItemInput4" type="text" placeholder="add item..." onchange="addItemToPage(), addItemToStorage(), clearInput()"></li>
-            </ul>
-        </div>
-
-        <div id="list-container5">
-            <ul id="todo-list5">
-                
-            </ul>
-            <ul>
-                <li><input id="addItemInput5" type="text" placeholder="add item..." onchange="addItemToPage(), addItemToStorage(), clearInput()"></li>
+                <li><input id="addItemInput" type="text" placeholder="add item..." onchange="call(), addItemToStorage(), clearInput();"></li>
             </ul>
         </div>
     </div>
@@ -93,16 +59,11 @@
     </div>
 
     <footer> 
-        <div id="github-container">
-            <i id="githubIcon" class="fa-brands fa-github"></i>
-            <a href="https://github.com/Balazsmi/Tudu" id="github">GitHub</a>
-        </div>
-        
+        <a href="https://github.com/Balazsmi/Tudu" id="github">&lt/&gtGitHub</a>
     </footer>
 
     
     <script src="main.js"></script>
 </body>
 </html>
-
 

@@ -18,7 +18,6 @@ body {
     --yellow: #ffd843;
     --red: #ff4c4c;
     --green: #00d062;
-    --white-clicked: #bdb095;
 }
 
 .fa-solid {
@@ -32,66 +31,18 @@ body {
     color: var(--white);
 }
 
-#github-container {
-    position: absolute;
-    height: fit-content;
-    bottom: 30px;
-    left: 30px;
-}
-
-#githubIcon {
-    color: var(--font);
-}
-
-#github {
-    font-family: "Jetbrains Mono";
-    font-weight: bolder;
-    margin-left: 2px;
-    color: var(--font);
-    cursor: pointer;
-    font-size: 17.5px;
-    text-decoration: none;
-}
-
-#github-container:hover a {
-    color: var(--white);
-    text-decoration: underline;
-}
-
-#github-container:hover i {
-    color: var(--white);
-}
-
 #main-container {
     display: flex;
     justify-content: center;
-    margin-top: 200px;
 }
 
-#list-container1, #list-container2, #list-container3, #list-container4, #list-container5 {
+#list-container {
     background-color: var(--background2);
     height: auto;
     min-height: 400px;
     width: 500px;
     border-radius: 25px;
     padding-top: 15px;
-}
-
-#list-container2, #list-container3, #list-container4, #list-container5 {
-    display: none;
-}
-
-#addItemInput1, #addItemInput2, #addItemInput3, #addItemInput4, #addItemInput5 {
-    font-size: 25px;
-    border: none;
-    border-radius: 7.5px;
-    background-color: transparent;
-    color: var(--white);
-    width: 375px;
-    padding: 0px !important;
-    font-family: "Varela Round", sans-serif;
-    margin-bottom: 15px;
-    margin-left: 40px;
 }
 
 ul {
@@ -106,6 +57,19 @@ li {
     margin: 20px;
     padding-left: 0px !important;
     margin-bottom: 0px !important;
+}
+
+#addItemInput {
+    font-size: 25px;
+    border: none;
+    border-radius: 7.5px;
+    background-color: transparent;
+    color: var(--white);
+    width: 375px;
+    padding: 0px !important;
+    font-family: "Varela Round", sans-serif;
+    margin-bottom: 15px;
+    margin-left: 40px;
 }
 
 input:focus {
@@ -135,8 +99,6 @@ input:focus {
 
 #header {
     display: flex;
-    position: absolute;
-    top: 100px;
     height: 75px;
     width: 600px;
     border-radius: 25px;
@@ -150,6 +112,8 @@ input:focus {
 #header-container {
     display: flex;
     justify-content: center;
+    margin-top: 125px;
+    margin-bottom: 25px;
 }
 
 #listHeader {
@@ -186,6 +150,26 @@ input:focus {
     color: var(--white-clicked);
 }
 
+
+#clear {
+    font-size: 35px;
+    font-family: "Varela Round", sans-serif;
+    border-style: none;
+    background-color: transparent;
+    color: var(--font);
+    border-radius: 15px;
+    width: 140px;
+    height: 50px;
+}
+
+#clear:hover {
+    color: var(--white) !important;
+}
+
+#clear {
+    box-shadow: 7.5px 7.5px 10px #202020;
+    background-color: #353535 !important;
+}
 
 #themes {
     position: absolute;
@@ -242,7 +226,23 @@ button:hover {
     background: transparent;
 }
 
+#github {
+    font-family: "Jetbrains Mono";
+    font-weight: bolder;
+    height: 20px;
+    position: absolute;
+    margin-left: 20px;
+    bottom: 27.5px;
+    color: var(--font);
+    cursor: pointer;
+    font-size: 17.5px;
+    text-decoration: none;
+}
 
+#github:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
 
 select:hover {
     color: var(--white);
@@ -260,8 +260,4 @@ select:hover {
 .deleteIcon {
     scale: 1.5;
     color: var(--white);
-}
-
-.deleteIcon:hover {
-    scale: 1.7;
 }
