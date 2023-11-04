@@ -27,13 +27,11 @@
         <header class="header">
             <header id="header">
                 <button id="cycleLeft" onclick="cycleLeft()"><i class="fa-solid fa-circle-chevron-right fa-rotate-180"></i></button>
-                <header id="listHeader" onclick="">List 1</header>
+                <input  id="listHeader" onchange="updateListNames();" type="text" placeholder="List 1"></input>
                 <button id="cycleRight" onclick="cycleRight()"><i class="fa-solid fa-circle-chevron-right"></i></button>
             </header>
         </header>
     </div>
-
-
 
     <div id="main-container">
         <div id="list-container">
@@ -45,7 +43,6 @@
             </ul>
         </div>
     </div>
-
 
     <i id="palette-icon" class="fa-solid fa-palette" onclick="showThemes()"></i>
     
@@ -61,7 +58,6 @@
     <footer> 
         <a href="https://github.com/Balazsmi/Tudu" id="github">&lt/&gt GitHub</a>
     </footer>
-
     
     <script src="main.js"></script>
 </body>

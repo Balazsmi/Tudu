@@ -7,8 +7,17 @@ let arrayContainer = {
 	array5: []
 };
 
+let listNames = {
+	list1: [],
+	list2: [],
+	list3: [],
+	list4: [],
+	list5: []
+};
+
 let cycle = 1;
 let selectedArray = "array" + cycle;
+let selectedList = "list" + cycle;
 
 
 let localStorageItem = JSON.parse(localStorage.getItem("array"));
@@ -16,10 +25,12 @@ let localStorageItem = JSON.parse(localStorage.getItem("array"));
 
 function selectedArrayUpdate() {
 	selectedArray = "array" + cycle;
+	selectedList = "list" + cycle;
 }
 
 retreiveListFromStorage();
 focus();
+changeListName();
 
 function focus() {
 	document.getElementById("addItemInput").focus();
@@ -67,6 +78,7 @@ function retreiveListFromStorage() {
 	//adds back the stored items to the array in the localStorage
 	if (localStorage.getItem("array")) {
 		arrayContainer = JSON.parse(localStorage.getItem('array'));
+		listNames = JSON.parse(localStorage.getItem('listNames'));
 		selectedArrayUpdate();
 		updateList(selectedArray);
 	}
@@ -74,7 +86,6 @@ function retreiveListFromStorage() {
 
 
 function updateList(value) {
-	console.log(selectedArray);
 	for(let i = 0; i < arrayContainer[value].length; i++) {
 		addItemToList(arrayContainer[value][i]);	
 	}
@@ -84,6 +95,19 @@ function deleteAllItemsFromList() {
     while (document.getElementById("todo-list").firstChild) {
         document.getElementById("todo-list").removeChild(document.getElementById("todo-list").firstChild);
     }
+}
+
+function updateListNames() {
+	listNames[selectedList][0] = document.getElementById("listHeader").value;
+	localStorage.setItem("listNames", JSON.stringify(listNames));
+}
+
+function changeListName() {
+	if(listNames[selectedList][0]) {
+		document.getElementById("listHeader").value = listNames[selectedList][0];
+	} else {
+		document.getElementById("listHeader").value = '';
+	}
 }
 
 
@@ -125,8 +149,9 @@ function cycleLeft() {
 		cycle--;
 		deleteAllItemsFromList();
 		retreiveListFromStorage();
+		changeListName();
 		console.log(selectedArray);
-		document.getElementById("listHeader").innerHTML = "List " + cycle;
+		document.getElementById("listHeader").placeholder = "List " + cycle;
 		cycleUpdate();
 		focus();
 	}
@@ -137,8 +162,9 @@ function cycleRight() {
 		cycle++;
 		deleteAllItemsFromList();
 		retreiveListFromStorage();
+		changeListName();
 		console.log(selectedArray);
-		document.getElementById("listHeader").innerHTML = "List " + cycle;
+		document.getElementById("listHeader").placeholder = "List " + cycle;
 		cycleUpdate();
 		focus();
 	}
