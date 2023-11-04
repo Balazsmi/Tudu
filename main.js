@@ -1,6 +1,20 @@
 let theme = 1;
-let array = [];
+let arrayContainer = {
+	array1: [],
+	array2: [],
+	array3: [],
+	array4: [],
+	array5: []
+};
+
 let cycle = 1;
+let selectedArray = "array" + cycle;
+
+function selectedArrayUpdate() {
+	selectedArray = "array" + cycle;
+}
+
+console.log(JSON.parse(localStorage.getItem("array")));
 
 retreiveListFromStorage();
 focus();
@@ -24,6 +38,7 @@ function showThemes() {
 		
 	}
 }
+
 function updateThemeColor() {
 	//sets the new theme color
 	localStorage.setItem("themeColorLocalStorage", getComputedStyle(document.documentElement).getPropertyValue('--themeColor'));
@@ -42,8 +57,9 @@ function addItemToList(value) {
 
 function addItemToStorage() {
 	//adds Item to localStorage
-	array.push(document.getElementById("addItemInput").value);
-	localStorage.setItem("array", JSON.stringify(array));
+	console.log(selectedArray);
+	arrayContainer[selectedArray].push(document.getElementById("addItemInput").value);
+	localStorage.setItem("array", JSON.stringify(arrayContainer));
 }
 
 function retreiveListFromStorage() {
@@ -51,34 +67,37 @@ function retreiveListFromStorage() {
 	if (localStorage.getItem("array")[0] != null) {
 		let i = 0;
 		while(i < JSON.parse(localStorage.getItem("array")).length) {
-			array.push(JSON.parse(localStorage.getItem("array"))[i]);
+			arrayContainer[selectedArray].push(JSON.parse(localStorage.getItem("array"))[i]);
 			addItemToList(JSON.parse(localStorage.getItem("array"))[i]);
 			i++;
 		}
 	}
-	localStorage.setItem("array", JSON.stringify(array));
+	localStorage.setItem("array", JSON.stringify(arrayContainer));
 }
 
 
 function clearInput() {
 	//clears inputfield
 	document.getElementById("addItemInput").value = "";
+	
 }
 
 
 function call() {
 	//executes addItemToList() with value of input field as parameter
 	addItemToList(document.getElementById("addItemInput").value);
+	addItemToStorage();
+	clearInput();
 }
 
 
 function deleteItem(button) {
 	//gets the index using getIndex() and deletes the list element
 	let index = getIndex(button);
-	if (index >= 0 && index < array.length) {
+	if (index >= 0 && index < arrayContainer[selectedArray].length) {
 		document.getElementById("todo-list").removeChild(document.getElementById("todo-list").children[index]);
-		array.splice(index, 1);
-		localStorage.setItem("array", JSON.stringify(array));
+		arrayContainer[selectedArray].splice(index, 1);
+		localStorage.setItem("array", JSON.stringify(arrayContainer));
 	}
 	focus();
 }
@@ -94,16 +113,22 @@ function getIndex(button) {
 function cycleLeft() {
 	if(cycle > 1) {
 		cycle--;
+		selectedArrayUpdate();
+		console.log(selectedArray);
 		document.getElementById("listHeader").innerHTML = "List " + cycle;
 		cycleUpdate();
+		focus();
 	}
 }
 
 function cycleRight() {
 	if(cycle < 5) {
 		cycle++;
+		selectedArrayUpdate();
+		console.log(selectedArray);
 		document.getElementById("listHeader").innerHTML = "List " + cycle;
 		cycleUpdate();
+		focus();
 	}
 }
 
