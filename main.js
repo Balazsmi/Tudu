@@ -32,6 +32,9 @@ retreiveListFromStorage();
 focus();
 changeListName();
 
+localStorage.setItem("listNames", JSON.stringify(listNames));
+
+
 function focus() {
 	document.getElementById("addItemInput").focus();
 }
@@ -173,3 +176,11 @@ function cycleRight() {
 function cycleUpdate() {
 
 }
+
+const inputField = document.getElementById("listHeader");
+
+inputField.addEventListener("click", function() {
+  setTimeout(function() {
+	inputField.select();
+  }, 5);
+});
