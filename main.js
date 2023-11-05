@@ -18,7 +18,7 @@ let listNames = {
 let cycle = 1;
 let selectedArray = "array" + cycle;
 let selectedList = "list" + cycle;
-
+document.getElementById("listIndicator" + cycle).style.backgroundColor = "var(--white)";
 
 let localStorageItem = JSON.parse(localStorage.getItem("array"));
 
@@ -153,9 +153,8 @@ function cycleLeft() {
 		deleteAllItemsFromList();
 		retreiveListFromStorage();
 		changeListName();
-		console.log(selectedArray);
 		document.getElementById("listHeader").placeholder = "List " + cycle;
-		cycleUpdate();
+		indicatorUpdate();
 		focus();
 	}
 }
@@ -166,18 +165,35 @@ function cycleRight() {
 		deleteAllItemsFromList();
 		retreiveListFromStorage();
 		changeListName();
-		console.log(selectedArray);
 		document.getElementById("listHeader").placeholder = "List " + cycle;
-		cycleUpdate();
+		indicatorUpdate();
 		focus();
 	}
 }
 
-function cycleUpdate() {
-
+function indicatorUpdate(button) {
+	document.getElementById("listIndicator1").style.backgroundColor = "var(--background2)";
+	document.getElementById("listIndicator2").style.backgroundColor = "var(--background2)";
+	document.getElementById("listIndicator3").style.backgroundColor = "var(--background2)";
+	document.getElementById("listIndicator4").style.backgroundColor = "var(--background2)";
+	document.getElementById("listIndicator5").style.backgroundColor = "var(--background2)";
+	document.getElementById("listIndicator" + cycle).style.backgroundColor = "var(--white)";
+	if (button) {
+		let buttonId = button.id;
+  		let lastCharacter = buttonId.charAt(buttonId.length - 1);
+  		cycle = parseInt(lastCharacter);
+		deleteAllItemsFromList();
+		retreiveListFromStorage();
+		changeListName();
+		document.getElementById("listHeader").placeholder = "List " + cycle;
+		indicatorUpdate();
+		focus();
+		indicatorUpdate(null);
+	}
 }
 
 const inputField = document.getElementById("listHeader");
+
 
 inputField.addEventListener("click", function() {
   setTimeout(function() {
