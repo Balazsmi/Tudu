@@ -18,7 +18,7 @@ let listNames = {
 let cycle = 1;
 let selectedArray = "array" + cycle;
 let selectedList = "list" + cycle;
-document.getElementById("listIndicator" + cycle).style.backgroundColor = "var(--white)";
+document.getElementById("listIndicator" + cycle).style.backgroundColor = "var(--themeColor)";
 
 let localStorageItem = JSON.parse(localStorage.getItem("array"));
 
@@ -66,7 +66,7 @@ function addItemToList(value) {
 	//adds one Item from the input field into the list
 	var ul = document.getElementById("todo-list");
 	var li = document.createElement("li");
-    li.innerHTML = '<button id="deleteButton" onclick="deleteItem(this);"><i class="fa-regular fa-circle-xmark deleteIcon"></i></button>';
+    li.innerHTML = '<button id="deleteButton" onclick="deleteItem(this); "><i class="deleteIcon fa-regular fa-circle-xmark"></i></button>';
 	li.appendChild(document.createTextNode(value));
 	ul.appendChild(li);
 }
@@ -177,7 +177,7 @@ function indicatorUpdate(button) {
 	document.getElementById("listIndicator3").style.backgroundColor = "var(--background2)";
 	document.getElementById("listIndicator4").style.backgroundColor = "var(--background2)";
 	document.getElementById("listIndicator5").style.backgroundColor = "var(--background2)";
-	document.getElementById("listIndicator" + cycle).style.backgroundColor = "var(--white)";
+	document.getElementById("listIndicator" + cycle).style.backgroundColor = "var(--themeColor)";
 	if (button) {
 		let buttonId = button.id;
   		let lastCharacter = buttonId.charAt(buttonId.length - 1);
@@ -200,3 +200,4 @@ inputField.addEventListener("click", function() {
 	inputField.select();
   }, 5);
 });
+

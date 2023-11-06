@@ -269,7 +269,7 @@ select:hover {
 }
 
 .deleteIcon {
-    scale: 1.5;
+    scale: 1.25;
     color: var(--white);
 }
 
@@ -297,11 +297,10 @@ select:hover {
 }
 
 #listIndicator1:active, #listIndicator2:active, #listIndicator3:active, #listIndicator4:active, #listIndicator5:active {
-    background-color: var(--white-clicked) !important;
+    background-color: var(--themeColor) !important;
 }
 
 #listIndicator1:hover, #listIndicator2:hover, #listIndicator3:hover, #listIndicator4:hover, #listIndicator5:hover {
-    color: var(--white) !important;
     scale: 1.1;
     transition-duration: 100ms;
 }
