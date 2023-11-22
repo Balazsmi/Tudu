@@ -46,7 +46,7 @@ function showThemes() {
 	//toggles the theme-color-picker
 	var x = document.getElementById("themes");
 	if (x.style.visibility == "visible") {
-		document.getElementById("palette-icon").style.color = 'var(--iconColor)';
+		document.getElementById("palette-icon").style.color = 'var(--icon)';
 	  	x.style.visibility = "hidden";
 	} else {
 		document.getElementById("palette-icon").style.color = 'var(--themeColor)';
@@ -58,7 +58,6 @@ function showThemes() {
 function updateThemeColor() {
 	//sets the new theme color
 	localStorage.setItem("themeColorLocalStorage", getComputedStyle(document.documentElement).getPropertyValue('--themeColor'));
-	document.getElementById("palette-icon").style.color = 'var(--themeColor)';
 	document.getElementById("wave").style.color = 'var(--themeColor)';
 }
 
@@ -66,7 +65,7 @@ function addItemToList(value) {
 	//adds one Item from the input field into the list
 	var ul = document.getElementById("todo-list");
 	var li = document.createElement("li");
-    li.innerHTML = '<button id="deleteButton" onclick="deleteItem(this); "><i class="deleteIcon fa-regular fa-circle-xmark"></i></button>';
+    li.innerHTML = '<button id="deleteButton" tabindex="-1" onclick="deleteItem(this); "><i class="deleteIcon fa-regular fa-circle-xmark"></i></button>';
 	li.appendChild(document.createTextNode(value));
 	ul.appendChild(li);
 }
@@ -191,13 +190,3 @@ function indicatorUpdate(button) {
 		indicatorUpdate(null);
 	}
 }
-
-const inputField = document.getElementById("listHeader");
-
-
-inputField.addEventListener("click", function() {
-  setTimeout(function() {
-	inputField.select();
-  }, 5);
-});
-

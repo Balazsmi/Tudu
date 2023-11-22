@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,16 +26,16 @@
     <div id="header-container">
         <header class="header">
             <header id="header">
-                <button id="cycleLeft" onclick="cycleLeft()"><i class="fa-solid fa-circle-chevron-right fa-rotate-180"></i></button>
+                <button id="cycleLeft" tabindex="-1" onclick="cycleLeft()"><i class="fa-solid fa-circle-chevron-right fa-rotate-180"></i></button>
                 <input  id="listHeader" onchange="updateListNames();" type="text" placeholder="List 1"></input>
-                <button id="cycleRight" onclick="cycleRight()"><i class="fa-solid fa-circle-chevron-right"></i></button>
+                <button id="cycleRight" tabindex="-1" onclick="cycleRight()"><i class="fa-solid fa-circle-chevron-right"></i></button>
             </header>
-            <div class="listIndicatorDiv">
-                <button id="listIndicator1" onclick="indicatorUpdate(this);"></button>
-                <button id="listIndicator2" onclick="indicatorUpdate(this);"></button>
-                <button id="listIndicator3" onclick="indicatorUpdate(this);"></button>
-                <button id="listIndicator4" onclick="indicatorUpdate(this);"></button>
-                <button id="listIndicator5" onclick="indicatorUpdate(this);"></button>
+            <div tabindex="-1" class="listIndicatorDiv">
+                <button id="listIndicator1" tabindex="-1" onclick="indicatorUpdate(this);"></button>
+                <button id="listIndicator2" tabindex="-1" onclick="indicatorUpdate(this);"></button>
+                <button id="listIndicator3" tabindex="-1" onclick="indicatorUpdate(this);"></button>
+                <button id="listIndicator4" tabindex="-1" onclick="indicatorUpdate(this);"></button>
+                <button id="listIndicator5" tabindex="-1" onclick="indicatorUpdate(this);"></button>
               </div>
         </header>
     </div>
@@ -60,10 +60,11 @@
         <i class="fa-solid fa-droplet" style="color: var(--yellow)"  onclick="document.querySelector(':root').style.setProperty('--themeColor', 'var(--yellow)'), updateThemeColor()"></i>
         <i class="fa-solid fa-droplet" style="color: var(--orange)"  onclick="document.querySelector(':root').style.setProperty('--themeColor', 'var(--orange)'), updateThemeColor()"></i>
         <i class="fa-solid fa-droplet" style="color: var(--red)   "  onclick="document.querySelector(':root').style.setProperty('--themeColor', 'var(--red)'   ), updateThemeColor()"></i>
+        <i class="fa-solid fa-droplet" style="color: var(--white) "  onclick="document.querySelector(':root').style.setProperty('--themeColor', 'var(--white)'), updateThemeColor()"></i>
     </div>
 
     <footer> 
-        <a href="https://github.com/Balazsmi/Tudu" id="github">&lt/&gt GitHub</a>
+        <a href="https://github.com/Balazsmi/Tudu" id="github" tabindex="-1">&lt/&gt GitHub</a>
     </footer>
     
     <script src="main.js"></script>

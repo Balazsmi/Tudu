@@ -1,25 +1,24 @@
 body {
-    background-color: var(--dark-gray);
+    background-color: var(--background);
+    font-family: 'Dosis', sans-serif;
 }
 
 :root {
-    --dark-gray: #313131;
-    --white: #f5e6c8;
-    --gray: #202020;
-    --hover: rgba(31, 31, 31, 0.527);
-    --background1: var(--font);
+    --background: #161616;
+    --white: #ffffff;
+    --gray: #262626;
+    --hover: #a3a3a3;
     --background2: #2b2b2b;
-    --iconColor: #616161;
-    --font: #5e5e5e;
-    --headerFont: #ffffff;
+    --icon: #616161;
+    --font: #4e4e4e;
     --purple: #c134dd;
-    --blue: #2b8ecf;
+    --blue: #43aaff;
     --orange: #fd8945;
-    --themeColor: #00d062;
+    --themeColor: #ffffff;
     --yellow: #ffd843;
     --red: #ff4c4c;
     --green: #00d062;
-    --white-clicked: #b9ad94;
+    --white-clicked: #949494;
 }
 
 input::selection {
@@ -29,7 +28,7 @@ input::selection {
 
 .fa-solid {
     scale: 2;
-    color: var(--iconColor);
+    color: var(--icon);
 }
 
 .fa-play:hover,
@@ -44,7 +43,7 @@ input::selection {
 }
 
 #list-container {
-    background-color: var(--background2);
+    background-color: transparent;
     height: auto;
     min-height: 400px;
     width: 500px;
@@ -61,7 +60,7 @@ ul {
 li {
     color: var(--white);
     font-size: 25px;
-    font-family: "Varela Round", sans-serif;
+    font-family: 'Dosis', sans-serif;
     margin: 20px;
     padding-left: 0px !important;
     margin-bottom: 0px !important;
@@ -126,16 +125,15 @@ input:focus {
 
 #listHeader {
     display: flex;
-    font-size: 25px;
-    font-family: "Varela Round", sans-serif;
+    font-size: 30px;
+    font-family: 'Dosis', sans-serif;
     border-style: none;
     background-color: transparent;
-    color: var(--headerFont);
+    color: var(--themeColor);
     border-radius: 50px;
     min-width: 50px;
     height: 50px;
-    box-shadow: 7.5px 7.5px 10px #202020;
-    background-color: #353535 !important;
+    background-color: transparent;
     justify-content: center;
     align-items: center;
     text-align: center !important;
@@ -186,15 +184,14 @@ input:focus {
     position: absolute;
     border-radius: 15px;
     border-style: none;
-    background-color: var(--background2);
+    background-color: transparent;
     margin: 0 auto;
     visibility: hidden;
     display: flex;
-    flex-direction: column;
-    right: 22.5px;
-    bottom: 85px;
+    flex-direction: row;
+    right: 85px;
+    bottom: 15px;
     align-items: center;
-    box-shadow: 5px 5px #202020;
 }
 
 .themeIcon {
@@ -214,6 +211,11 @@ input:focus {
     color: var(--white) !important;
 }
 
+#palette-icon {
+    bottom: 30px;
+    right: 30px;
+}
+
 .fa-droplet {
     margin: 20px;
     cursor: pointer;
@@ -223,10 +225,6 @@ input:focus {
     scale: 2.4 !important;
 }
 
-#palette-icon {
-    bottom: 30px;
-    right: 30px;
-}
 
 button:hover {
     cursor: pointer;
@@ -238,8 +236,6 @@ button:hover {
 }
 
 #github {
-    font-family: "Varela Round", sans-serif;
-    font-weight: bolder;
     height: 20px;
     position: absolute;
     margin-left: 20px;
@@ -248,6 +244,8 @@ button:hover {
     cursor: pointer;
     font-size: 17.5px;
     text-decoration: none;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 15px;
 }
 
 #github:hover {
@@ -275,8 +273,6 @@ select:hover {
 
 .deleteIcon:hover {
     color: var(--white-clicked);
-    transform: scale(1.1);
-    transition: transform 0.1s;
 }
 
 .listIndicatorDiv {
@@ -304,3 +300,22 @@ select:hover {
     scale: 1.1;
     transition-duration: 100ms;
 }
+
+
+@media (max-width: 620px) {
+    #themes {
+        position: absolute;
+        border-radius: 15px;
+        border-style: none;
+        background-color: transparent;
+        margin: 0 auto;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        right: 18px;
+        bottom: 85px;
+        align-items: center;
+    }
+}
+
