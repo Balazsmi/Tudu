@@ -6,6 +6,8 @@ body {
 body, html {
     overflow: hidden;
     height: 100%;
+    overscroll-behavior: none;
+    touch-action: none;
 }
 
 :root {
