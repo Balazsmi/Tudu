@@ -135,7 +135,9 @@ function deleteItem(button) {
 		arrayContainer[selectedArray].splice(index, 1);
 		localStorage.setItem("array", JSON.stringify(arrayContainer));
 	}
-	focus();
+	if (!isMobileDevice()) {
+		focus();
+	}
 }
 
 function getIndex(button) {
@@ -146,6 +148,10 @@ function getIndex(button) {
 	return index;
 }
 
+function isMobileDevice() {
+	return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
 function cycleLeft() {
 	if(cycle > 1) {
 		cycle--;
@@ -154,8 +160,11 @@ function cycleLeft() {
 		changeListName();
 		document.getElementById("listHeader").placeholder = "List " + cycle;
 		indicatorUpdate();
-		focus();
+		if (!isMobileDevice()) {
+			focus();
+		}
 	}
+	
 }
 
 function cycleRight() {
@@ -166,7 +175,9 @@ function cycleRight() {
 		changeListName();
 		document.getElementById("listHeader").placeholder = "List " + cycle;
 		indicatorUpdate();
-		focus();
+		if (!isMobileDevice()) {
+			focus();
+		}
 	}
 }
 
@@ -186,7 +197,9 @@ function indicatorUpdate(button) {
 		changeListName();
 		document.getElementById("listHeader").placeholder = "List " + cycle;
 		indicatorUpdate();
-		focus();
+		if (!isMobileDevice()) {
+			focus();
+		}
 		indicatorUpdate(null);
 	}
 }

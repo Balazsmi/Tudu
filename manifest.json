@@ -1,0 +1,17 @@
+{
+    "name": "Tudu",
+    "short_name": "Tudu",
+    "description": "simple todo list",
+    "start_url": "/",
+    "display": "fullscreen",
+    "background_color": "#161616",
+    "theme_color": "#ffffff",
+    "icons": [
+      {
+        "src": "/img/icon.png",
+        "sizes": "297x297",
+        "type": "image/png"
+      }
+    ]
+  }
+  

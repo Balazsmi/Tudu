@@ -64,6 +64,8 @@ li {
     margin: 20px;
     padding-left: 0px !important;
     margin-bottom: 0px !important;
+    display: flex;
+    align-items: center;
 }
 
 #addItemInput {
@@ -99,7 +101,7 @@ input:focus {
     color: white;
     font-family: "Space Grotesk", sans-serif;
     top: 30px;
-    left: 50px;
+    left: 40px;
     display: flex;
     align-items: center;
 }
@@ -132,6 +134,7 @@ input:focus {
     color: var(--themeColor);
     border-radius: 50px;
     min-width: 50px;
+    width: 300px;
     height: 50px;
     background-color: transparent;
     justify-content: center;
@@ -140,10 +143,18 @@ input:focus {
 }
 
 
-#cycleLeft, #cycleRight {   
+#cycleLeft  {   
     background-color: transparent;
     border-style: none;
+    margin-right: -50px;
 }
+
+#cycleRight {
+    background-color: transparent;
+    border-style: none;
+    margin-left: -50px;
+}
+
 
 .fa-circle-chevron-right {
     color: var(--font);
@@ -152,33 +163,11 @@ input:focus {
 .fa-circle-chevron-right:hover {
     color: var(--white);
     scale: 2.2;
-    transition-duration: 500ms;
 }
 .fa-circle-chevron-right:active {
     color: var(--white-clicked);
-    transition-duration: 0ms;
 }
 
-
-#clear {
-    font-size: 35px;
-    font-family: "Varela Round", sans-serif;
-    border-style: none;
-    background-color: transparent;
-    color: var(--font);
-    border-radius: 15px;
-    width: 140px;
-    height: 50px;
-}
-
-#clear:hover {
-    color: var(--white) !important;
-}
-
-#clear {
-    box-shadow: 7.5px 7.5px 10px #202020;
-    background-color: #353535 !important;
-}
 
 #themes {
     position: absolute;
@@ -259,11 +248,11 @@ select:hover {
 
 #deleteButton {
     background-color: transparent;
-    border-radius: 15px;
-    height: 30px;
-    width: 30px;
+    scale: 1.4;
+    border-radius: 50px;
     border-style: none;
-    margin-right: 10px;
+    margin-right: 15px;
+    margin-top: 7.5px;
 }
 
 .deleteIcon {
@@ -302,7 +291,37 @@ select:hover {
 }
 
 
-@media (max-width: 620px) {
+@media (max-width: 610px) {
+    #header {
+        width: 350px;
+        margin-top: -50px;
+    }
+    .listIndicatorDiv {
+        padding-inline: 0px;
+    }
+    #list-container {
+        width: 400px;
+    }
+    #addItemInput {
+        width: 200px;
+    }
+    #listIndicator1, #listIndicator2, #listIndicator3, #listIndicator4, #listIndicator5 {
+        height: 10px;
+    }
+    #heading {
+        margin-top: -15px;
+        margin-left: -10px;
+    }
+    #deleteButton {
+        scale: 1.75;
+        margin-top: 5px;
+    }
+    #cycleLeft, #cycleRight {
+        scale: 1.35;
+    }
+}
+
+@media (max-width: 670px) {
     #themes {
         position: absolute;
         border-radius: 15px;
@@ -313,9 +332,13 @@ select:hover {
         display: flex;
         flex-direction: column;
         align-items: center;
-        right: 18px;
-        bottom: 85px;
+        right: 22.5px;
+        bottom: 90px;
         align-items: center;
+        height: 300px;
+    }
+    .fa-droplet {
+        scale: 1.6;
+        margin: 15px;
     }
 }
-
