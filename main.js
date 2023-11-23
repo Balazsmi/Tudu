@@ -211,3 +211,8 @@ document.addEventListener('gesturestart', function (e) {
 document.addEventListener('touchmove', function (e) {
     e.preventDefault();
 });
+
+document.addEventListener('touchstart', function(event) {
+	// Prevent default behavior or take other actions
+	event.preventDefault();
+});
