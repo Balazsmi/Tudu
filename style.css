@@ -3,6 +3,11 @@ body {
     font-family: 'Dosis', sans-serif;
 }
 
+body, html {
+    overflow: hidden;
+    height: 100%;
+}
+
 :root {
     --background: #161616;
     --white: #ffffff;
