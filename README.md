@@ -1,5 +1,5 @@
 # Tudu
-![Screenshot 2024-01-12 212415](https://github.com/Balazsmi/Tudu/assets/81588599/d5fbacbf-e4a9-4d01-9ce3-fd49cbd2f53f)
+![Screenshot 2024-01-12 212415](https://github.com/Balazsmi/Tudu/assets/81588599/abbe9f84-53a9-4428-97f4-5866fddf4701)
 
 A minimalistic todo-list you can try [here](https://balazsmi.github.io/Tudu/)
 
